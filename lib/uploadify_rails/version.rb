@@ -1,0 +1,3 @@
+module UploadifyRails
+  VERSION = "0.0.1"
+end

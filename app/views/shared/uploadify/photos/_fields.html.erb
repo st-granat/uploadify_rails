@@ -1,0 +1,15 @@
+<div class="fields">
+  <div class="uploaded-container">
+    <a class="show_big" href="<%= object.data.url(:big) %>">
+      <img src="<%= object.data.url(:small) %>" width="100" height="100" />
+    </a>
+  </div>
+  <div class="uploaded-info">
+    <input type="hidden" value="<%= object.id %>" name="photo_ids[]" />
+    <div><%= number_to_human_size(object.data_file_size) %></div>
+    <div><%= object.data_content_type %></div>
+    <div>
+      <a id="photo_<%= object.id %>" class="delete" href="javascript:void(0)">Удалить</a>
+    </div>
+  </div>
+</div>

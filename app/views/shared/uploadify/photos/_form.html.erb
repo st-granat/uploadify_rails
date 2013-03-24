@@ -1,0 +1,6 @@
+<div id="add-nested-resources" data-uploader="/photos"></div>
+<div id="nested_resources">
+  <% form.object.photos.each do |photo| %>
+    <%= render "shared/uploadify/photos/fields", :object => photo %>
+  <% end %>
+</div>
