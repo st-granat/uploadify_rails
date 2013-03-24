@@ -10,10 +10,21 @@ And then execute:
 
 ## Usage
 
+Migration (Photo work with Paperclip):
+
+    create_table :photos do |t|
+      t.integer :advert_id    # объявление
+      t.integer :user_id      # пользователь (авторизованный)
+      t.string  :session_id   # пользователь (гость)
+      t.string  :data_content_type
+      t.string  :data_file_name
+      t.integer :data_file_size
+      t.timestamps
+    end
+
 Routes:
 
     resources :photos, :only => [:create]
-
     post "/photo/:id" => "photos#destroy"
 
 Javascripts:
@@ -27,41 +38,33 @@ Stylesheets:
 Model Parent (F.E. Advert):
 
     class Advert ...
-
+        ...
         has_many :photos, :dependent => :destroy
-
         accepts_nested_attributes_for :photos, :allow_destroy => true
-
+        ...
         # Support only one relation name in just moment
-
         uploadify_nested_parent :relations => [:photos]
+        ...
 
 Model with Photo:
 
     class Photo ...
-
         uploadify_nested_resource
 
 Photos Controller:
 
     class PhotosController < ApplicationController
-
       uploadify_nested_resource
-
     end
 
 Adverts Controller:
 
     class AdvertsController < ApplicationController
-
+      ...
       def create
-
         @advert = Advert.new
-
         @advert.build_attributes_from_params(params, current_user, session[:session_id])
-
         if @advert.save
-
           ...
 
 View:
