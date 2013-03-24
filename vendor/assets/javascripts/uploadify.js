@@ -1,6 +1,5 @@
 //= require jquery.uploadify.js
 //= require nested_attachments_uploader.js
-//=# require jquery_nested_form.js
 //= require_self
 
 function add_nested_resources() {

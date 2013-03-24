@@ -28,6 +28,10 @@ Model Parent (F.E. Advert):
 
     class Advert ...
 
+        has_many :photos, :dependent => :destroy
+
+        accepts_nested_attributes_for :photos, :allow_destroy => true
+
         # Support only one relation name in just moment
 
         uploadify_nested_parent :relations => [:photos]
