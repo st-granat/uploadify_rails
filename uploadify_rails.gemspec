@@ -4,6 +4,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'uploadify_rails/version'
 
 Gem::Specification.new do |gem|
+  gem.license       = "MIT"
   gem.name          = "uploadify_rails"
   gem.version       = UploadifyRails::VERSION
   gem.authors       = ["Andrey"]
