@@ -11,7 +11,7 @@ Gem::Specification.new do |gem|
   gem.email         = ["railscode@gmail.com"]
   gem.description   = "Rails 3 multi upload with flash based Uploadify and Rails assets pipeline"
   gem.summary       = "Rails 3 multi upload with flash based Uploadify and Rails assets pipeline"
-  gem.homepage      = "https://github.com/vav/uploadify_rails"
+  gem.homepage      = "https://github.com/st-granat/uploadify_rails"
 
   gem.files         = `git ls-files`.split($/)
   gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }
